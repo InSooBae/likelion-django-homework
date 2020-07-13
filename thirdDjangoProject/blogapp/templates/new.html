@@ -30,17 +30,28 @@
     ></script>
   </head>
   <body style="max-width: 55rem; padding: 0 0.5rem; margin: 3rem auto;">
-   {% for blog in blogs.all %}
-    <div class="jumbotron">
-      <h1 class="display-4">{{blog.title}}</h1>
-      <p class="lead" style="color: #A99f9f;">
-        {{blog.pub_date}}
-      </p>
+  <div class="jumbotron">
+      <h1 class="display-4">글 작성</h1>
       <hr class="my-4" />
-      <p class="lead">
-       {{blog.summary}} <a href="{%url 'detail' blog.id%}">...more</a>
-       </p>
+  <form action="{%url 'create'%}" >
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="제목">
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="body" rows="3"></textarea>
+  </div>
+    <button type="submit" class="btn btn-primary">글 생성</button>
+</form>
+      <hr class="my-4" />
+
+       <a href="{%url 'home'%}">홈으로</a>
     </div>
- {% endfor %}
+   
+ 
+    </div>
   </body>
 </html>
