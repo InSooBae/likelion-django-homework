@@ -48,3 +48,16 @@ def blogpost(request):
     else:
         form = BlogPost()
         return render(request, 'new.html', {'form': form})
+
+
+def search(request):
+    blogs = Blog.objects.all().order_by('-id')
+
+    ser = request.POST.get('search', "")
+
+    if ser:
+        blogs = blogs.filter(title__icontains=ser)
+        return render(request, 'res.html', {'blogs': blogs, 'search': ser})
+
+    else:
+        return render(request, 'res.html')

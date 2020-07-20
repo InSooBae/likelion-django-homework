@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 {% block contents %}
+{%load static %}
+<br>
+    <div class="card bg-dark text-white">
+  <img src="{% static 'profile.jpg'%}" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <h1 class="card-title text-dark">배인수 블로그?</h5>
+    <p class="card-text text-dark">{% lorem 5 b random %}</p>
+    <p class="card-text text-dark">-배인수</p>
+  </div>
+</div>
+<br>
    {% for blog in posts %}
     <div class="jumbotron">
       <h1 class="display-4">{{blog.title}}</h1>
