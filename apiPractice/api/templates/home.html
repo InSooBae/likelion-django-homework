@@ -11,7 +11,7 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-
+    
     <!-- JS, Popper.js, and jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -59,6 +59,26 @@ var marker = new kakao.maps.Marker({
 // 마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);
 	</script>
-    
+      <div id="map1" style="height:400px;width:400px;"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 37.225373, lng: 127.1829047};
+  // The map, centered at Uluru
+  var map1 = new google.maps.Map(
+      document.getElementById('map1'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker1 = new google.maps.Marker({position: uluru, map: map1});
+}
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT2xwRgiBk26G9hkey9IkFGVXI4ukl7Nw&callback=initMap">
+    </script>
   </body>
 </html>
