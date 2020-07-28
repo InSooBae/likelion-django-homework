@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>글자 카운터</title>
+    <title>지도 API</title>
     <!-- CSS only -->
     <link
       rel="stylesheet"
@@ -30,14 +30,25 @@
     ></script>
   </head>
   <body style="max-width: 55rem; padding: 0 0.5rem; margin: 3rem auto;">
-    <div class="jumbotron">
-      <h1 class="display-4">안녕하세요, 여기서 글자를 세세요!</h1>
-      <p class="lead">
-        안녕하세요, 회장님 이곳은 글자를 세 주는 멋쟁이 사자처럼의 워드 카운트 웹페이지 입니다. 여기에서 글자를 세보세요.
-      </p>
+    <div  class="jumbotron">
+      <h1 class="display-4">KAKAO GOOGLE map API</h1>
+      
       <hr class="my-4" />
+     
     </div>
+<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a7c3372d8afdd88d7f50ded7dd64a239"></script>
+	<script>
+		var container = document.getElementById('map');
+    
+		var options = {
+			center: new kakao.maps.LatLng(37.225373, 127.1829047),
+			level: 3
+		};
 
+		var map = new kakao.maps.Map(container, options);
+ 
+	</script>
     
   </body>
 </html>
